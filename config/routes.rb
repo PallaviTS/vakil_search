@@ -53,6 +53,9 @@ VakilSearch::Application.routes.draw do
   #     # (app/controllers/admin/products_controller.rb)
   #     resources :products
   #   end
-  resources :lawyers
+  resources :lawyers do
+    collection { post :import}
+  end
+
   root to: 'lawyers#index'
 end
