@@ -48,3 +48,5 @@ gem 'haml'
 
 # Use debugger
 gem 'debugger', group: [:development, :test]
+
+# External Gems used for this app
