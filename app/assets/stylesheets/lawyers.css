@@ -1,0 +1,34 @@
+.dataTables_length label {
+  float: left;
+  text-align: left;
+
+}
+.dataTables_paginate {
+  float: right;
+  margin: 0;
+}
+
+.dataTables_length select {
+  width: 75px;
+}
+#lawyers_info{
+  position: relative;
+  left: -180px;
+}
+.dataTables_filter label {
+  float: right;
+}
+
+.dataTables_info {
+  padding-top: 8px;
+  margin-left: 0px;
+}
+th{
+  text-align: center;
+}
+table.table {
+  clear: both;
+  margin-bottom: 6px !important;
+}
+
+

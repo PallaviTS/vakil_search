@@ -5,9 +5,7 @@ class LawyersController < ApplicationController
 
   def import
     Lawyer.import(params[:file])
+    @lawyers = Lawyer.first(15)
     render 'show'
-   end
-   def show
-
    end
 end

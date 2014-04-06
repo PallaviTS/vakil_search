@@ -1,1 +1,19 @@
-%pre="pallavi"
+.jumbotron.text-center{style:"margin:30px;border-radius:20px;"}
+  .container
+    %h1
+      ="Choose your lawyer!"
+    %hr
+  %table#lawyers.display.table.table-striped.table-bordered
+    %thead
+      %tr
+        %th Lawyer Name
+        %th Service
+        %th City
+        %th Fee
+    %tbody
+      - @lawyers.each do |lawyer|
+        %tr
+          %td= lawyer.lawyer_name
+          %td= lawyer.service_name
+          %td= lawyer.location
+          %td= number_to_currency lawyer.charges
