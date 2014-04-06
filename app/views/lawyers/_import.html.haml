@@ -1,0 +1,4 @@
+%p
+  =form_tag import_lawyers_path, multipart: true do
+    =file_field_tag :file
+    =submit_tag "Import!", class: 'btn btn-primary'
