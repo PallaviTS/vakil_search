@@ -5,3 +5,25 @@
     =render partial: 'import'
     %p
       ="Click the button to upload a CSV file"
+
+  %button.btn.btn-primary.btn-lg{"data-target" => "#myModal", "data-toggle" => "modal"}
+    ="Search"
+
+  #myModal.modal.fade{"aria-hidden" => "true", "aria-labelledby" => "myModalLabel", :role => "dialog", :tabindex => "-1"}
+    .modal-dialog
+      .modal-content
+        .modal-header
+          %button.close{"aria-hidden" => "true", "data-dismiss" => "modal", :type => "button"}x
+          %h4#myModalLabel.modal-title
+            ="Selecting a Lawyer"
+        .modal-body
+          ="pallavi"
+          ="pallavi"
+          ="pallavi"
+          ="pallavi"
+          ="pallavi"
+        .modal-footer
+          %button.btn.btn-default{"data-dismiss" => "modal", :type => "button"}
+            ="Close"
+          %button.btn.btn-primary{:type => "button"}
+            ="Save changes"
