@@ -2,28 +2,11 @@
   .container
     %h1
       ="Find a lawyer!"
-    =render partial: 'import'
     %p
       ="Click the button to upload a CSV file"
 
-  %button.btn.btn-primary.btn-lg{"data-target" => "#myModal", "data-toggle" => "modal"}
-    ="Search"
+    =form_tag lawyers_path,method: :get, multipart: true do
+      =file_field_tag :file, class: 'text-center'
+      =submit_tag "Import!", class: 'btn btn-primary'
+    =render partial: 'import'
 
-  #myModal.modal.fade{"aria-hidden" => "true", "aria-labelledby" => "myModalLabel", :role => "dialog", :tabindex => "-1"}
-    .modal-dialog
-      .modal-content
-        .modal-header
-          %button.close{"aria-hidden" => "true", "data-dismiss" => "modal", :type => "button"}x
-          %h4#myModalLabel.modal-title
-            ="Selecting a Lawyer"
-        .modal-body
-          ="pallavi"
-          ="pallavi"
-          ="pallavi"
-          ="pallavi"
-          ="pallavi"
-        .modal-footer
-          %button.btn.btn-default{"data-dismiss" => "modal", :type => "button"}
-            ="Close"
-          %button.btn.btn-primary{:type => "button"}
-            ="Save changes"

@@ -55,6 +55,7 @@ VakilSearch::Application.routes.draw do
   #   end
   resources :lawyers do
     collection { post :import}
+    collection { post :search }
   end
 
   root to: 'lawyers#index'

@@ -1,4 +1,25 @@
-%p
-  =form_tag import_lawyers_path, multipart: true do
-    =file_field_tag :file
-    =submit_tag "Import!", class: 'btn btn-primary'
+-@lawyers_by_service = Lawyer.where("service_name is not NULL").pluck(:service_name)
+-@lawyers_by_location = Lawyer.where("location is not NULL").pluck(:location)
+.jumbotron.text-center
+  .container
+    %h1
+      ="Choose your lawyer!"
+
+  %button.btn.btn-primary.btn-lg{"data-target" => "#myModal", "data-toggle" => "modal"}
+    ="Search"
+
+  #myModal.modal.fade{"aria-hidden" => "true", "aria-labelledby" => "myModalLabel", :role => "dialog", :tabindex => "-1"}
+    .modal-dialog
+      .modal-content
+        .modal-header
+          %button.close{"aria-hidden" => "true", "data-dismiss" => "modal", :type => "button"}x
+          %h4#myModalLabel.modal-title
+            ="Selecting a Lawyer"
+        .modal-body
+          =form_tag search_lawyers_path do
+            =select_tag 'service_name', options_for_select(@lawyers_by_service), require: true
+            =select_tag 'location', options_for_select(@lawyers_by_location)
+            =submit_tag "Submit", class:'btn btn-primary'
+        .modal-footer
+          %button.btn.btn-default{"data-dismiss" => "modal", :type => "button"}
+            ="Close"
